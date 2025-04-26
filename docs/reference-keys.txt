@@ -8,7 +8,6 @@ fig:PML-hist
 fig:Body-hist
 fig:odakeBC
 fig:percentage3
-tab:table3
 tab:table4
 fig:Body-box
 fig:Body-hist2
@@ -23,11 +22,7 @@ fig:Fork-line
 計測と分析の方法
 分析
 小竹貝塚の前上顎骨長と体長の組成
-pmlと体長の概要表
-pmlと体長の分布
 時期別の比較
-体長の分布
-統計分析
 他の遺跡との比較
 現代のクロダイ山口県
 考察小竹貝塚でのクロダイ漁
