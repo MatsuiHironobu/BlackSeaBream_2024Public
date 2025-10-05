@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>1 研究の方法 | 小竹貝塚のクロダイの体長と漁撈活動に関する考察</title>
   <meta name="description" content="1 研究の方法 | 小竹貝塚のクロダイの体長と漁撈活動に関する考察" />
-  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.44 and GitBook 2.6.7" />
 
   <meta property="og:title" content="1 研究の方法 | 小竹貝塚のクロダイの体長と漁撈活動に関する考察" />
   <meta property="og:type" content="book" />
@@ -172,13 +172,16 @@ Figure 1.2: クロダイとスズキの部位別出土組成
 <h2><span class="header-section-number">1.2</span> 計測と分析の方法<a href="研究の方法.html#計測と分析の方法" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>クロダイの前上顎骨はプロスチオン（前方の歯の基部）から後突起の最後端の直線距離を計測した（Figure<a href="研究の方法.html#fig:measuring-position">1.3</a>）。これを前上顎骨長（以下PML:
 <strong>P</strong>re<strong>m</strong>axillary <strong>L</strong>ength）
-といい、赤沢<span class="citation">（1969）</span>や坂田他<span class="citation">（1992）</span>、石丸<span class="citation">（2005）</span>でも同様の部分を計測している。このPMLから以下の計算式で体長を求めることができる<span class="citation">（石丸2005）</span>。<span class="math inline">\(y\)</span>は体長、<span class="math inline">\(x\)</span>はPML、<span class="math inline">\(R^2\)</span>は決定係数を示す。</p>
+といい、赤沢<span class="citation">（1969）</span>や坂田他<span class="citation">（1992）</span>、石丸<span class="citation">（2005）</span>でも同様の部分を計測している。このPMLから以下の計算式で体長を求めることができる[<span class="citation">石丸 （2005）</span>]<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>。<span class="math inline">\(y\)</span>は体長、<span class="math inline">\(x\)</span>はPML、<span class="math inline">\(R^2\)</span>は決定係数、<span class="math inline">\(Se\)</span>は回帰残差の標準偏差を示す。</p>
 <!-- コメントアウト。$R^2$は決定係数で回帰式の当てはまり具合を見るもので、1に近いほど説明力があることを意味する。坂田他[-@sakata_noguchi_1992]にも回帰直線で示したモデルがあるが、決定係数（相関係数の2乗）は石丸[-@ishimaru_2005]ほど高くはないので、石丸モデルを採用する（雄のPMLで相関係数が$r=0.9273$で、決定係数は$R^2=0.859$。石丸の示している多項式回帰の決定係数も、データ分布が直線になるように変数変換し、その回帰直線の相関係数から求めている（https://biolab.sakura.ne.jp/r2.html））。 -->
 <p><span class="math display">\[
 y = -0.0933x^2 + 13.6673x - 7.1035
 \]</span></p>
 <p><span class="math display">\[
-(R^2 = 0.9674)
+R^2 = 0.9674
+\]</span></p>
+<p><span class="math display">\[
+Se = 14.5
 \]</span></p>
 <p>PMLの計測は1/10
 mmまで計測可能なデジタルノギス（シンワデジタルカーボンファイバーノギス
@@ -189,7 +192,7 @@ mmまで計測可能なデジタルノギス（シンワデジタルカーボン
 Figure 1.3: クロダイの部位名称
 </p>
 </div>
-<p>計測した数値は、報告書の基礎データとして使用された魚類の骨の一覧表（Excel形式）に記録し、CSV形式に変換してデータとした。このデータをR（version 4.5.0）<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>で読み込み、加工・編集し、作表・作図、統計的な分析を行った。一部はAdobe
+<p>計測した数値は、報告書の基礎データとして使用された魚類の骨の一覧表（Excel形式）に記録し、CSV形式に変換してデータとした。このデータをR（version 4.5.0）<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>で読み込み、加工・編集し、作表・作図、統計的な分析を行った。一部はAdobe
 IllustratorとPhotoshopで加工した図を利用した。</p>
 <!-- コメントアウト。substrで文字を抜き出している。 -->
 <p>統計分析では、小竹貝塚から出土したクロダイの前上顎骨を母集団、
@@ -206,7 +209,8 @@ mm）で土壌を洗浄して採取されたものである。このメッシュ
 <div class="footnotes">
 <hr />
 <ol start="1">
-<li id="fn1"><p>Rとは統計解析向けのプログラミング言語および開発環境のこと。オープンソース、フリーソフトでデータ分析や可視化等の作業を効率的に行うことが可能。「パッケージ」という関数やデータセットをまとめた拡張機能の開発が盛んで、研究者やデータサイエンティスト等の間で広く使用されている。<a href="研究の方法.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn1"><p>石丸が計測した55点に、鈴木らが提示したデータ48点を加えた合計104点のデータに基づいて算出された計算式を採用する。<a href="研究の方法.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>Rとは統計解析向けのプログラミング言語および開発環境のこと。オープンソース、フリーソフトでデータ分析や可視化等の作業を効率的に行うことが可能。「パッケージ」という関数やデータセットをまとめた拡張機能の開発が盛んで、研究者やデータサイエンティスト等の間で広く使用されている。<a href="研究の方法.html#fnref2" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
