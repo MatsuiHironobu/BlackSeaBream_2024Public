@@ -108,9 +108,10 @@ div.csl-indent {
 <li class="chapter" data-level="2" data-path="分析.html"><a href="分析.html"><i class="fa fa-check"></i><b>2</b> 分析</a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="分析.html"><a href="分析.html#小竹貝塚の前上顎骨長と体長の組成"><i class="fa fa-check"></i><b>2.1</b> 小竹貝塚の前上顎骨長と体長の組成</a></li>
-<li class="chapter" data-level="2.2" data-path="分析.html"><a href="分析.html#時期別の比較"><i class="fa fa-check"></i><b>2.2</b> 時期別の比較</a></li>
+<li class="chapter" data-level="2.2" data-path="分析.html"><a href="分析.html#jikibetuhikaku"><i class="fa fa-check"></i><b>2.2</b> 時期別の比較</a></li>
 <li class="chapter" data-level="2.3" data-path="分析.html"><a href="分析.html#他の遺跡との比較"><i class="fa fa-check"></i><b>2.3</b> 他の遺跡との比較</a></li>
 <li class="chapter" data-level="2.4" data-path="分析.html"><a href="分析.html#現代のクロダイ山口県"><i class="fa fa-check"></i><b>2.4</b> 現代のクロダイ（山口県）</a></li>
+<li class="chapter" data-level="2.5" data-path="分析.html"><a href="分析.html#hosoku"><i class="fa fa-check"></i><b>2.5</b> 補足の分析</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="考察小竹貝塚でのクロダイ漁.html"><a href="考察小竹貝塚でのクロダイ漁.html"><i class="fa fa-check"></i><b>3</b> 考察：小竹貝塚でのクロダイ漁</a>
 <ul>
@@ -151,10 +152,16 @@ div.csl-indent {
 <strong>2024年4月1日</strong><br />
 初版作成。本書は「富山県博物館協会電子紀要」（URL:<a href="http://museums.toyamaken.jp/documents/documents039/" class="uri">http://museums.toyamaken.jp/documents/documents039/</a> ）に掲載されている拙著（松井広信2024「小竹貝塚のクロダイの体長と漁撈活動に関する考察」）をgit bookで公開するために編集したものです。<br />
 <strong>2025年10月5日</strong><br />
-本稿のPML–体長変換式における誤差の扱いについて、先行研究（石丸2005）で報告された回帰残差の標準偏差（Se = 14.5 mm, n = 104）を反映しました。本修正は、結果や解釈の方向性を変更するものではなく、誤差の伝播と不確実性の表現を明確にすることを目的としています。</p>
+- PMLから体長に変換する式における誤差の扱いについて、先行研究（石丸2005）で報告された標準誤差（Se = 14.5 mm, n = 104）を反映しました。<br />
+- 本修正は、結果や解釈の方向性を変更するものではなく、誤差の伝播と不確実性の表現を明確にすることを目的としています。<br />
+<strong>2025年10月11日</strong><br />
+- 信頼区間を相性区間に変換し、補足分析（<a href="分析.html#hosoku">2.5</a>）を追加しました。<br />
+- 時期別の比較（<a href="分析.html#jikibetuhikaku">2.2</a>）の並べ替え検定について、体長変換式の標準誤差を反映した内容に変更しました。これに伴いパッケージ<code>infer</code>で出力した図をFigure<a href="分析.html#fig:permutation-test">2.7</a>に変更しています。
+- 時期別の比較（<a href="分析.html#jikibetuhikaku">2.2</a>）の並べ替え検定の結果の記述について、ASA声明に準拠した内容に修正しました。<br />
+- 本修正および追加の分析は、結果や解釈の方向性を変更するものではなく、統計的な表現を修正したものです。</p>
 </blockquote>
 <p>小竹貝塚はあいの風とやま鉄道呉羽駅の北東に位置する縄文時代前期の遺跡である（約6,000年前）。当時は気候が温暖で海水位が高く、潟湖が遺跡の近くまで広がっていたと考えられている（Figure<a href="index.html#fig:odakekaiduka">0.1</a>左）。北陸新幹線建設に先立つ発掘調査で91体の人骨が発見され、全国的に話題となった。B・C地区の貝塚（Figure<a href="index.html#fig:odakekaiduka">0.1</a>右）からは貝類・魚類・哺乳類・鳥類等の自然遺物のほか、土器・石器・木製品・骨角歯牙製品といった人工の遺物が出土している。</p>
-<p>今回研究対象とした魚類の骨は、魚種や部位の特定及びその組成の分析がすでに行われ、その結果は報告書に掲載されている<span class="citation">（富山県文化振興財団埋蔵文化財調査事務所2014）</span>。一方、魚類の組成以上の分析、例えば縄文時代の漁撈活動を復元するような研究はあまり行われていない。</p>
+<p>今回研究対象とした魚類の骨は、魚種や部位の特定及びその組成の分析がすでに行われ、その結果は報告書に掲載されている<span class="citation">（（公財）富山県文化振興財団埋蔵文化財調査事務所2014）</span>。一方、魚類の組成以上の分析、例えば縄文時代の漁撈活動を復元するような研究はあまり行われていない。</p>
 <p>そこで、本研究では小竹貝塚で出土したクロダイの体長を復元することで、小竹貝塚の漁撈活動を復元する基礎資料とする。魚類の体長を復元する研究は、赤沢<span class="citation">（1969）</span>、小宮・鈴木<span class="citation">（1977）</span>、坂田他<span class="citation">（1992）</span>、石丸<span class="citation">（2005）</span>によって試みられている。また、各地の発掘調査報告書にデータが掲載されている場合もあり、遺跡間での比較も可能である。この研究によって、縄文時代の生業の一端を明らかにできることが期待される。</p>
 <div class="figure"><span style="display:block;" id="fig:odakekaiduka"></span>
 <img src="analysis/figures/odake_chousaku.png" alt="左：小竹貝塚の位置と縄文時代前期の射水平野、右：小竹貝塚の調査区位置図と地形復元（富山県埋蔵文化財センターパンフレット「小竹貝塚 Odake Shell Midden」より）" width="150%" />
