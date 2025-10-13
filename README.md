@@ -3,4 +3,5 @@
 
 松井広信2024「小竹貝塚のクロダイの体長と漁撈活動に関する考察」『富山県博物館協会電子紀要』（URL:http://museums.toyamaken.jp/documents/documents039/ ）
 
-GitHub Pagesで公開しているhtmlは内容に変更はありませんが、見やすいように図表の位置・レイアウトを変更している。
+GitHub Pagesで公開しているhtmlの変更履歴は「はじめに」を参照。
+
