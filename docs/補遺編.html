@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Page not found | 小竹貝塚のクロダイの体長と漁撈活動に関する考察</title>
-  <meta name="description" content="Page not found | 小竹貝塚のクロダイの体長と漁撈活動に関する考察" />
+  <title>補遺編 | 小竹貝塚のクロダイの体長と漁撈活動に関する考察</title>
+  <meta name="description" content="補遺編 | 小竹貝塚のクロダイの体長と漁撈活動に関する考察" />
   <meta name="generator" content="bookdown 0.44 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Page not found | 小竹貝塚のクロダイの体長と漁撈活動に関する考察" />
+  <meta property="og:title" content="補遺編 | 小竹貝塚のクロダイの体長と漁撈活動に関する考察" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Page not found | 小竹貝塚のクロダイの体長と漁撈活動に関する考察" />
+  <meta name="twitter:title" content="補遺編 | 小竹貝塚のクロダイの体長と漁撈活動に関する考察" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-
+<link rel="prev" href="おわりに.html"/>
+<link rel="next" href="引用参考文献.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -148,19 +148,97 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="page-not-found" class="section level1">
-<h1>Page not found</h1>
-<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
-<p>You may want to try searching to find the page's new location, or use
-the table of contents to find the page you are looking for.</p>
+<div id="補遺編" class="section level1 unnumbered hasAnchor">
+<h1>補遺編<a href="補遺編.html#補遺編" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="不確実性の伝播と変換式の回帰残差による補正" class="section level2 unnumbered hasAnchor">
+<h2>不確実性の伝播と変換式の回帰残差による補正<a href="補遺編.html#不確実性の伝播と変換式の回帰残差による補正" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="デルタ法による不確実性の伝播" class="section level3 unnumbered hasAnchor">
+<h3>デルタ法による不確実性の伝播<a href="補遺編.html#デルタ法による不確実性の伝播" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>PML（前上顎骨長）を X とし、体長 Y への変換は次の二次関数で表される：</p>
+<p><span class="math display">\[
+Y = f(X) = -0.0933\,X^2 + 13.6673\,X - 7.1035 \quad (\text{mm})
+\]</span></p>
+<p>体長を cm に換算する場合は、</p>
+<p><span class="math display">\[
+Y_{\rm cm} = 0.1 \, f(X)
+\]</span></p>
+<p>デルタ法は非線形関数 <span class="math inline">\(f(x)\)</span>
+をその平均付近では直線（線形）だとみなす方法である。確率変数 <span class="math inline">\(X\)</span> が平均
+<span class="math inline">\(\mu_X\)</span> の近くの値 <span class="math inline">\(x\)</span> をとる時、<span class="math inline">\(f(x)\)</span>は</p>
+<p><span class="math display">\[
+f(x) \approx f(\mu_X) + f&#39;(\mu_X)(x - \mu_X)
+\]</span></p>
+<p>とテイラー展開により近似できる。右辺の<span class="math inline">\(f&#39;(\mu_X)(x - \mu_X)\)</span>
+は平均あたりでの接線に相当し、<span class="math inline">\(x\)</span>の変化によってどの程度変化するか（傾き）を表している。</p>
+<p>PMLから体長への変換式を微分すると、傾きを与える導関数 <span class="math inline">\(f&#39;(X)\)</span>
+は次のように求められる。</p>
+<p><span class="math display">\[
+f&#39;(X) = -0.1866\,X + 13.6673
+\]</span></p>
+<p>となる。PMLの分散 <span class="math inline">\(\mathrm{Var}[X]\)</span> がわかっていれば、<span class="math inline">\(f(X)\)</span>
+の分散は次の式で推定できる：</p>
+<p><span class="math display">\[
+\mathrm{Var}[f(X)] \approx [f&#39;(\mu_X)]^2 \, \mathrm{Var}[X]
+\]</span></p>
+<p>体長を cm 単位に換算すると：</p>
+<p><span class="math display">\[
+\mathrm{Var}[Y_{\rm cm}] \approx \big(f&#39;(\mu_X)\cdot 0.1\big)^2 \, \mathrm{Var}[X]
+\]</span></p>
+</div>
+<div id="回帰残差による補正" class="section level3 unnumbered hasAnchor">
+<h3>回帰残差による補正<a href="補遺編.html#回帰残差による補正" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>デルタ法による近似では、PMLのばらつきが体長の推定にどのように影響を及ぼすかを評価できる。一方、体長の変換式には、回帰式自体の不確実性（回帰残差の標準偏差
+<span class="math inline">\(Se\)</span>）が存在する。回帰式が実際のデータを完全に説明できていない程度を示し、石丸<span class="citation">（石丸2005）</span>は<span class="math inline">\(Se=1.45 \quad (\text{cm})\)</span>
+と報告している。</p>
+<p>回帰残差によるばらつきは、デルタ法による変換誤差とは独立な要素である。そのため、体長の分散
+<span class="math inline">\(\mathrm{Var}[Y_{\rm cm}]\)</span> は両者を加算して求められる：</p>
+<p><span class="math display">\[
+\mathrm{Var}[Y_{\rm cm}] = \big(f&#39;(\mu_X)\cdot 0.1\big)^2 \, \mathrm{Var}[X] + \mathrm{Se}^2
+\]</span></p>
+<p>体長の標準偏差はこの平方根で表される：</p>
+<p><span class="math display">\[
+\mathrm{SD}[Y_{\rm cm}] = \sqrt{ \big(f&#39;(\mu_X)\cdot 0.1\big)^2 \, \mathrm{Var}[X] + \mathrm{Se}^2 }
+\]</span></p>
+</div>
+<div id="計算例" class="section level3 unnumbered hasAnchor">
+<h3>計算例<a href="補遺編.html#計算例" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>例えば、左側のPMLの平均が27.5mm、標準偏差が4.3mmの場合：</p>
+<p><span class="math display">\[
+f&#39;(27.5) = -0.1866 \cdot 27.5 + 13.6673 \approx 8.54  \quad (\text{mm})
+\]</span></p>
+<p>したがって、体長への変換後の分散は</p>
+<p><span class="math display">\[
+\mathrm{Var}[Y_{\rm cm}] \approx (8.54\cdot 0.1)^2 \times (4.3)^2 + \mathrm{1.45}^2   \approx 15.6
+\]</span></p>
+<p>標準偏差はその平方根をとり</p>
+<p><span class="math display">\[
+\mathrm{SD}[Y_{\rm cm}] \approx \sqrt{15.6} \approx 3.95
+\]</span></p>
+<p>となる。補正前の体長の標準偏差は <span class="math inline">\(SD\)</span> =
+3.68
+であることから、不確実性の伝播と変換式の回帰残差を考慮するとわずかにばらつきが大きくなる。</p>
+</div>
+</div>
+<div id="時期別比較のp値関数相性区間" class="section level2 unnumbered hasAnchor">
+<h2>時期別比較のp値関数（相性区間）<a href="補遺編.html#時期別比較のp値関数相性区間" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>時期別の比較（<a href="分析.html#jikibetuhikaku">2.2</a>）で母平均の相性区間を示した。補足としてFigure<a href="補遺編.html#fig:p-value-function">4.1</a>にp値関数を示す。この図は、仮定される母平均の値に対してp値がどのように変化するかを示したものであり、母平均のどの値が観測データとより相性が良いかを視覚的に理解できる。</p>
+<p>人骨期以降のp値関数は、人骨期以前および人骨期のものに比べて裾が広く、対応する95%相性区間もより広い。これは人骨期以降の標本数が少ないことに起因すると考えられる（Table<a href="分析.html#tab:table4">2.3</a>）。したがって、人骨期以降では母平均の推定精度が相対的に低く、人骨期以前・人骨期の2時期よりも推定値の不確実性が高いと解釈できる。</p>
+<div class="figure"><span style="display:block;" id="fig:p-value-function"></span>
+<img src="analysis/figures/p-value-function-1.png" alt="母平均のp値関数と相性区間" width="2400" />
+<p class="caption">
+Figure 4.1: 母平均のp値関数と相性区間
+</p>
+</div>
+
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-
+<a href="おわりに.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="引用参考文献.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

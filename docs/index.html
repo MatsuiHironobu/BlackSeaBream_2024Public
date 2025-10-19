@@ -111,7 +111,6 @@ div.csl-indent {
 <li class="chapter" data-level="2.2" data-path="分析.html"><a href="分析.html#jikibetuhikaku"><i class="fa fa-check"></i><b>2.2</b> 時期別の比較</a></li>
 <li class="chapter" data-level="2.3" data-path="分析.html"><a href="分析.html#他の遺跡との比較"><i class="fa fa-check"></i><b>2.3</b> 他の遺跡との比較</a></li>
 <li class="chapter" data-level="2.4" data-path="分析.html"><a href="分析.html#現代のクロダイ山口県"><i class="fa fa-check"></i><b>2.4</b> 現代のクロダイ（山口県）</a></li>
-<li class="chapter" data-level="2.5" data-path="分析.html"><a href="分析.html#hosoku"><i class="fa fa-check"></i><b>2.5</b> 補足の分析</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="考察小竹貝塚でのクロダイ漁.html"><a href="考察小竹貝塚でのクロダイ漁.html"><i class="fa fa-check"></i><b>3</b> 考察：小竹貝塚でのクロダイ漁</a>
 <ul>
@@ -121,6 +120,16 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="4" data-path="結論.html"><a href="結論.html"><i class="fa fa-check"></i><b>4</b> 結論</a></li>
 <li class="chapter" data-level="" data-path="おわりに.html"><a href="おわりに.html"><i class="fa fa-check"></i>おわりに</a></li>
+<li class="chapter" data-level="" data-path="補遺編.html"><a href="補遺編.html"><i class="fa fa-check"></i>補遺編</a>
+<ul>
+<li class="chapter" data-level="" data-path="補遺編.html"><a href="補遺編.html#不確実性の伝播と変換式の回帰残差による補正"><i class="fa fa-check"></i>不確実性の伝播と変換式の回帰残差による補正</a>
+<ul>
+<li class="chapter" data-level="" data-path="補遺編.html"><a href="補遺編.html#デルタ法による不確実性の伝播"><i class="fa fa-check"></i>デルタ法による不確実性の伝播</a></li>
+<li class="chapter" data-level="" data-path="補遺編.html"><a href="補遺編.html#回帰残差による補正"><i class="fa fa-check"></i>回帰残差による補正</a></li>
+<li class="chapter" data-level="" data-path="補遺編.html"><a href="補遺編.html#計算例"><i class="fa fa-check"></i>計算例</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="補遺編.html"><a href="補遺編.html#時期別比較のp値関数相性区間"><i class="fa fa-check"></i>時期別比較のp値関数（相性区間）</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="引用参考文献.html"><a href="引用参考文献.html"><i class="fa fa-check"></i>引用・参考文献</a></li>
 </ul>
 
@@ -155,10 +164,13 @@ div.csl-indent {
 - PMLから体長に変換する式における誤差の扱いについて、先行研究（石丸2005）で報告された標準誤差（Se = 14.5 mm, n = 104）を反映しました。<br />
 - 本修正は、結果や解釈の方向性を変更するものではなく、誤差の伝播と不確実性の表現を明確にすることを目的としています。<br />
 <strong>2025年10月11日</strong><br />
-- 信頼区間を相性区間に変換し、補足分析（<a href="分析.html#hosoku">2.5</a>）を追加しました。<br />
-- 時期別の比較（<a href="分析.html#jikibetuhikaku">2.2</a>）の並べ替え検定について、体長変換式の標準誤差を反映した内容に変更しました。これに伴いパッケージ<code>infer</code>で出力した図をFigure<a href="分析.html#fig:permutation-test">2.7</a>に変更しています。
+- 補遺編を追加しました。<br />
+- 時期別の比較（<a href="分析.html#jikibetuhikaku">2.2</a>）の並べ替え検定について、体長変換式の残差標準偏差を反映した内容に変更しました。これに伴いパッケージ<code>infer</code>で出力した図をFigure<a href="分析.html#fig:permutation-test">2.7</a>に差し替えました。<br />
 - 時期別の比較（<a href="分析.html#jikibetuhikaku">2.2</a>）の並べ替え検定の結果の記述について、ASA声明に準拠した内容に修正しました。<br />
-- 本修正および追加の分析は、結果や解釈の方向性を変更するものではなく、統計的な表現を修正したものです。</p>
+- 本修正および追加は、結果や解釈の方向性を変更するものではなく、統計的な表現を修正したものです。<br />
+<strong>2025年10月18日</strong><br />
+- 時期別の比較（<a href="分析.html#jikibetuhikaku">2.2</a>）について、PMLのSDの不確実性伝播、変換式の回帰分析で得られた残差標準偏差を反映した補正に修正しました。<br />
+- 修正した内容について補遺編に説明を追加しました。</p>
 </blockquote>
 <p>小竹貝塚はあいの風とやま鉄道呉羽駅の北東に位置する縄文時代前期の遺跡である（約6,000年前）。当時は気候が温暖で海水位が高く、潟湖が遺跡の近くまで広がっていたと考えられている（Figure<a href="index.html#fig:odakekaiduka">0.1</a>左）。北陸新幹線建設に先立つ発掘調査で91体の人骨が発見され、全国的に話題となった。B・C地区の貝塚（Figure<a href="index.html#fig:odakekaiduka">0.1</a>右）からは貝類・魚類・哺乳類・鳥類等の自然遺物のほか、土器・石器・木製品・骨角歯牙製品といった人工の遺物が出土している。</p>
 <p>今回研究対象とした魚類の骨は、魚種や部位の特定及びその組成の分析がすでに行われ、その結果は報告書に掲載されている<span class="citation">（（公財）富山県文化振興財団埋蔵文化財調査事務所2014）</span>。一方、魚類の組成以上の分析、例えば縄文時代の漁撈活動を復元するような研究はあまり行われていない。</p>
